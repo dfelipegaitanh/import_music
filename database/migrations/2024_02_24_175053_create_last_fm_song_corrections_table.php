@@ -1,0 +1,25 @@
+<?php
+
+use App\Models\LastFmSong;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+
+    public function up(): void
+    {
+        Schema::create('last_fm_song_corrections', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->foreignIdFor(LastFmSong::class)->constrained();
+        });
+    }
+
+    public function down(): void
+    {
+        Schema::dropIfExists('last_fm_song_corrections');
+    }
+
+};
