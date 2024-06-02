@@ -2,7 +2,9 @@
 
 namespace App\Classes;
 
-class Lastfm extends \Barryvanveen\Lastfm\Lastfm
+use App\Interfaces\MusicSupplier;
+
+class Lastfm extends \Barryvanveen\Lastfm\Lastfm implements MusicSupplier
 {
 
 }
