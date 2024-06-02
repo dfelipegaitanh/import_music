@@ -5,10 +5,10 @@ namespace App\Console\Commands;
 use App\Classes\Lastfm;
 use Illuminate\Console\Command;
 
-class LastFmUserDataCommand extends Command
+class LastfmUserDataCommand extends Command
 {
 
-    protected $signature = 'lastFm:user-data {user_name?}';
+    protected $signature = 'lastfm:user-data {user_name?}';
 
     protected $description = 'Command description';
 
@@ -17,10 +17,8 @@ class LastFmUserDataCommand extends Command
 
         $user_name = $this->argument('user_name') ?? config('lastfm.userName');
 
-        $user_info = $lastfm->userInfo(username: $user_name)->get();
-
-
-        $lastfmUserData = $lastfm->get();
+        $user_info        = $lastfm->userInfo(username: $user_name)->get();
+        $lastfm_user_data = $lastfm->get();
         echo 1;
     }
 

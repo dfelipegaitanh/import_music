@@ -6,7 +6,7 @@ use App\Classes\Lastfm;
 use Illuminate\Support\Collection;
 use Illuminate\Support\ServiceProvider;
 
-class LastFmServiceProvider extends ServiceProvider
+class LastfmServiceProvider extends ServiceProvider
 {
 
     public function register(): void

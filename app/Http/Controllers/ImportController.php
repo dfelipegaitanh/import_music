@@ -16,7 +16,7 @@ class ImportController extends Controller implements ImporterInterface
 
         $this->setUser($user);
 
-        Artisan::call("lastFm:user-data", [
+        Artisan::call("lastfm:user-data", [
             'user_name' => $this->getUserName(),
         ]);
     }
