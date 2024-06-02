@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Classes\Lastfm;
 use Illuminate\Support\Collection;
 use Illuminate\Support\ServiceProvider;
 
@@ -22,9 +23,8 @@ class LastFmServiceProvider extends ServiceProvider
             });
         });
 
-        $this->app->extend(\Barryvanveen\Lastfm\LastfmServiceProvider::class, function (\Barryvanveen\Lastfm\LastfmServiceProvider $provider) {
-
-//            $provider->app->get();
+        $this->app->singleton(Lastfm::class, function () {
+            return new Lastfm(new \GuzzleHttp\Client(), config('lastfm.api_key'));
         });
     }
 

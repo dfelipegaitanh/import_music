@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use Barryvanveen\Lastfm\Lastfm;
+use App\Classes\Lastfm;
 use Illuminate\Console\Command;
 
 class LastFmUserDataCommand extends Command
