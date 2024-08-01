@@ -19,7 +19,6 @@ class LastfmUserDataCommand extends Command
 
         $user_info        = $lastfm->userInfo(username: $user_name)->get();
         $lastfm_user_data = $lastfm->get();
-        dd($lastfm_user_data);
         echo 1;
     }
 
